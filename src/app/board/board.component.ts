@@ -6,8 +6,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./board.component.scss']
 })
 export class BoardComponent implements OnInit {
+  maxMoves!: number;
   squares!: any[];
   xIsNext!: boolean;
+  isGameOver!: boolean;
   winner: any;
 
   constructor() { }
@@ -19,7 +21,9 @@ export class BoardComponent implements OnInit {
   newGame(): void {
     this.squares = Array(9).fill(null);
     this.winner = null;
+    this.isGameOver = false;
     this.xIsNext = true;
+    this.maxMoves = 9;
   }
 
   get player(): string {
@@ -27,11 +31,19 @@ export class BoardComponent implements OnInit {
   }
 
   makeMove(idx: number) {
-    if(!this.squares[idx] && !this.winner) {
+    if(!this.squares[idx] && !this.winner && !this.isGameOver) {
       this.squares.splice(idx, 1, this.player);
       this.xIsNext = !this.xIsNext;
+      this.maxMoves--;
     }
-    this.winner = this.calculateWinner();
+    if(this.maxMoves == 0 && !this.winner){
+      this.winner = this.calculateWinner();
+      if(!this.winner){
+        this.isGameOver = true;
+      }
+    }else{
+      this.winner = this.calculateWinner();
+    }
   }
 
   calculateWinner(): any {

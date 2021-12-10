@@ -1,6 +1,6 @@
 main {
   display: grid;
-  grid-template-columns: 10vw 10vw 10vw;
+  grid-template-columns: 25vmin 25vmin 25vmin;
   grid-gap: 1px;
   justify-content: center;
   margin-top: 20px;
@@ -8,5 +8,5 @@ main {
 }
 
 app-square {
-  height: 10vw;
+  height: 25vmin;
 }
