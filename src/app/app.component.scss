@@ -1,12 +1,4 @@
-nb-layout {
-  width: 100vw;
-}
-.spacer {
-  width: 15vw;
-}
-
-#column_middle {
-  min-width: 70vw;
-  align-content: center;
+#column_middle{
   text-align: center;
+  justify-content: center;
 }
