@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "nils-dev-bfb46": {
+      "hosting": {
+        "tiktaktoe": [
+          "nils-dev-ttt"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "nils-dev-bfb46"
+  }
+}

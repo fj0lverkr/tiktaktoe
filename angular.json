@@ -107,6 +107,16 @@
             ],
             "scripts": []
           }
+        },
+        "deploy": {
+          "builder": "@angular/fire:deploy",
+          "options": {
+            "prerender": false,
+            "ssr": false,
+            "browserTarget": "tiktaktoe:build:production",
+            "firebaseProject": "nils-dev-bfb46",
+            "firebaseHostingSite": "nils-dev-ttt"
+          }
         }
       }
     }
